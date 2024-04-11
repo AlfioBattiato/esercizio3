@@ -54,9 +54,7 @@ $array[]=$row;
 //     'ottimoprezzo' => 0.01,
 // ]);
 
-// // DELETE
-// $stmt = $pdo->prepare("DELETE FROM pizza WHERE id = ?");
-// $stmt->execute([$id]);
+
 
 // // UPDATE
 // $stmt = $pdo->prepare("UPDATE pizza SET name = :name  WHERE id = :id");
@@ -93,6 +91,7 @@ $array[]=$row;
 
 
 
+    <h4 class="display-4 text-center">Menù</h4>
     <div class="container pt-5 d-flex gap-2 flex-wrap">
 
         <?php

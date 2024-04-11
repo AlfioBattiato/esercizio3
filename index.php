@@ -1,46 +1,46 @@
 <?php
 
-$host = 'localhost';
-$db = 'pizzeria';
-$user = 'root';
-$pass = '';
+// $host = 'localhost';
+// $db = 'pizzeria';
+// $user = 'root';
+// $pass = '';
 
-$dsn = "mysql:host=$host;dbname=$db";
+// $dsn = "mysql:host=$host;dbname=$db";
 
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES => false,
-];
+// $options = [
+//     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+//     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+//     PDO::ATTR_EMULATE_PREPARES => false,
+// ];
 
-try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
+// try {
+//     $pdo = new PDO($dsn, $user, $pass, $options);
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Prendi i dati dal form
-        $titolo = $_POST['Titolo'];
-        $prezzo = $_POST['Prezzo'];
-        $ingredienti = $_POST['Ingredienti'];
-        $immagine = $_POST['Immagine'];
+//     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//         // Prendi i dati dal form
+//         $titolo = $_POST['Titolo'];
+//         $prezzo = $_POST['Prezzo'];
+//         $ingredienti = $_POST['Ingredienti'];
+//         $immagine = $_POST['Immagine'];
 
-        // Prepara la query di inserimento
-        $stmt = $pdo->prepare("INSERT INTO pizza (titolo, prezzo, ingredienti, img) VALUES (:titolo, :prezzo, :ingredienti, :immagine)");
+//         // Prepara la query di inserimento
+//         $stmt = $pdo->prepare("INSERT INTO pizza (titolo, prezzo, ingredienti, img) VALUES (:titolo, :prezzo, :ingredienti, :immagine)");
 
-        // Esegui la query di inserimento
-        $stmt->execute([
-            'titolo' => $titolo,
-            'prezzo' => $prezzo,
-            'ingredienti' => $ingredienti,
-            'immagine' => $immagine
-        ]);
+//         // Esegui la query di inserimento
+//         $stmt->execute([
+//             'titolo' => $titolo,
+//             'prezzo' => $prezzo,
+//             'ingredienti' => $ingredienti,
+//             'immagine' => $immagine
+//         ]);
 
-        // Messaggio di successo
-        echo "Pizza inserita con successo nel database!";
-    }
-} catch (PDOException $e) {
-    // Gestione degli errori del database
-    echo "Errore nel database: " . $e->getMessage();
-}
+//         // Messaggio di successo
+//         echo "Pizza inserita con successo nel database!";
+//     }
+// } catch (PDOException $e) {
+//     // Gestione degli errori del database
+//     echo "Errore nel database: " . $e->getMessage();
+// }
 
 ?>
 
@@ -66,7 +66,7 @@ try {
 
     <!-- form -->
     <div class="container pt-5">
-        <form method="post" action="">
+        <form method="post" action="form.php">
             <div class="mb-3">
                 <label for="Titolo" class="form-label">Titolo</label>
                 <input type="text" name="Titolo" class="form-control" id="Titolo">
