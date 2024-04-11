@@ -84,7 +84,6 @@
                 <input type="text" name="Immagine" class="form-control" id="Immagine">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a href="http://localhost/esercizio3/pizzelist.php" class="btn btn-warning">Vedi utenti</a>
         </form>
     </div>
 
