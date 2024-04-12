@@ -1,5 +1,4 @@
 <?php
-
 $host = 'localhost';
 $db = 'pizzeria';
 $user = 'root';
